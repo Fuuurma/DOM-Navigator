@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #ceb99a;
+  --secondary-color: #8a8fdc;
+
+  --selected-color: #ff5500;
+  --moving-color: #fc4085;
+
+  --bg-color: #fdf6fc;
+  --bg-color2: #f1f1f1;
+  --bg-color3: #e0e0e0;
+  --text-color: #100017;
+
+  --border-style: 2px solid var(--text-color);
+  --border-radius: 4px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.top-container {
+  display: flex;
+}
+.block-container {
+  display: block;
+}
+
+#nodePath {
+  margin-left: 5vh;
+}
+
+.node-path {
+  margin-left: calc(10vw + 5px) !important;
+  margin: 5px;
+  background-color: var(--bg-color2);
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+}
+
+h5 {
+  margin: 5px 10px;
+}
+
+h4 {
+  margin-top: 2vh;
+  margin-left: 10vw;
+  margin-bottom: 1vh;
+}
+
+#tablero {
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25vh;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.linea {
+  display: flex;
+  gap: 0.25vw;
+  margin: 0;
+  padding: 0;
+}
+
+.casilla {
+  display: inline-flex;
+  column-gap: 0.25vw;
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  height: 10vh;
+  width: 10vw;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea:nth-child(odd) div:nth-child(odd) {
+  background-color: var(--primary-color);
+}
+.linea:nth-child(even) div:nth-child(even) {
+  background-color: var(--primary-color);
+}
+
+.linea:nth-child(odd) div:nth-child(even) {
+  background-color: var(--secondary-color);
+}
+.linea:nth-child(even) div:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+.casillaMovil {
+  background-color: var(--moving-color) !important;
+}
+
+.casillaSel {
+  background-color: var(--selected-color) !important;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #f0f0f0;
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--bg-color3);
+}
+
+.button input[type="radio"] {
+  display: none;
+}
+
+.button input[type="radio"]:checked + label {
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
+}
+
+.button label {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: var(--bg-color);
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-left: 10vw;
+}
